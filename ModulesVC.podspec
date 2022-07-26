@@ -8,8 +8,7 @@ s.summary = "Module Selection View Controller using CollectionView"
 #s.requires_arc = true
 
 # 2
-s.version          = '1.0' #fallback to major 
-version
+s.version          = ENV['LIB_VERSION'] || '1.0' #fallback to major version
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE"}

@@ -16,7 +16,7 @@ public struct KModule {
     public var badgeText: String?
     public var isEnabled: Bool
     public var watermark: UIImage?
-    public var settings: KModule_Settings
+    public var settings: KModuleSettings
     public init(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, watermark: UIImage? = nil, isEnabled: Bool = true) {
         self.title = title
         self.action = action
@@ -25,6 +25,6 @@ public struct KModule {
         self.badgeText = badgeText
         self.isEnabled = isEnabled
         self.watermark = watermark
-        self.settings = KModule_Settings()
+        self.settings = KModuleSettings()
     }
 }
