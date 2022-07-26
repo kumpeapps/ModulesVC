@@ -18,7 +18,7 @@ open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     ///List of Modules
     open var modules: [KModule] = []
     ///Sets Icon Width. Default is 100
-    open var iconWidth:Int = 100
+    open var iconWidth: Int = 100
     ///Sets cell background color. Default is clear
     open var cellBackgroundColor: UIColor = .clear
     ///Sets collectionView background color. Default is clear
