@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FD637BD2890A8F30072706F /* ModulesVC.docc in Sources */ = {isa = PBXBuildFile; fileRef = 0FD637BC2890A8F30072706F /* ModulesVC.docc */; };
-		0FD637BE2890A8F30072706F /* ModulesVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FD637BB2890A8F30072706F /* ModulesVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FD637C52890ABD20072706F /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD637C42890ABD10072706F /* ModuleCollectionViewCell.swift */; };
+		0FD637C72890ABFC0072706F /* ModulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD637C62890ABFC0072706F /* ModulesVC.swift */; };
+		0FD637CB2890AC690072706F /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD637CA2890AC690072706F /* ShowAlert.swift */; };
+		0FD637CD2890AD5F0072706F /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD637CC2890AD5F0072706F /* GCDBlackBox.swift */; };
+		6E55C9703185BBC369E92111 /* Pods_ModulesVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698ED7CBC24AE790C97FB59D /* Pods_ModulesVC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FD637B82890A8F30072706F /* ModulesVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ModulesVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FD637BB2890A8F30072706F /* ModulesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModulesVC.h; sourceTree = "<group>"; };
-		0FD637BC2890A8F30072706F /* ModulesVC.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ModulesVC.docc; sourceTree = "<group>"; };
+		0FD637C42890ABD10072706F /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
+		0FD637C62890ABFC0072706F /* ModulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesVC.swift; sourceTree = "<group>"; };
+		0FD637CA2890AC690072706F /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
+		0FD637CC2890AD5F0072706F /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
+		698ED7CBC24AE790C97FB59D /* Pods_ModulesVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ModulesVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AB82523444D9BCC346D1BFB /* Pods-ModulesVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModulesVC.debug.xcconfig"; path = "Target Support Files/Pods-ModulesVC/Pods-ModulesVC.debug.xcconfig"; sourceTree = "<group>"; };
+		E5F4E5CEDCCC8C884A9764F6 /* Pods-ModulesVC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModulesVC.release.xcconfig"; path = "Target Support Files/Pods-ModulesVC/Pods-ModulesVC.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -22,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E55C9703185BBC369E92111 /* Pods_ModulesVC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +42,8 @@
 			children = (
 				0FD637BA2890A8F30072706F /* ModulesVC */,
 				0FD637B92890A8F30072706F /* Products */,
+				554B8D952AD8E79682E064F6 /* Pods */,
+				A43E90FB96473A0A15F30FD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,10 +58,29 @@
 		0FD637BA2890A8F30072706F /* ModulesVC */ = {
 			isa = PBXGroup;
 			children = (
-				0FD637BB2890A8F30072706F /* ModulesVC.h */,
-				0FD637BC2890A8F30072706F /* ModulesVC.docc */,
+				0FD637C42890ABD10072706F /* ModuleCollectionViewCell.swift */,
+				0FD637C62890ABFC0072706F /* ModulesVC.swift */,
+				0FD637CA2890AC690072706F /* ShowAlert.swift */,
+				0FD637CC2890AD5F0072706F /* GCDBlackBox.swift */,
 			);
 			path = ModulesVC;
+			sourceTree = "<group>";
+		};
+		554B8D952AD8E79682E064F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9AB82523444D9BCC346D1BFB /* Pods-ModulesVC.debug.xcconfig */,
+				E5F4E5CEDCCC8C884A9764F6 /* Pods-ModulesVC.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A43E90FB96473A0A15F30FD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				698ED7CBC24AE790C97FB59D /* Pods_ModulesVC.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,7 +90,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FD637BE2890A8F30072706F /* ModulesVC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +100,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FD637C12890A8F30072706F /* Build configuration list for PBXNativeTarget "ModulesVC" */;
 			buildPhases = (
+				AE0CA4D56A20BBF98292B95B /* [CP] Check Pods Manifest.lock */,
 				0FD637B32890A8F30072706F /* Headers */,
 				0FD637B42890A8F30072706F /* Sources */,
 				0FD637B52890A8F30072706F /* Frameworks */,
@@ -96,6 +126,7 @@
 				TargetAttributes = {
 					0FD637B72890A8F30072706F = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -127,12 +158,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AE0CA4D56A20BBF98292B95B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ModulesVC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0FD637B42890A8F30072706F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FD637BD2890A8F30072706F /* ModulesVC.docc in Sources */,
+				0FD637CD2890AD5F0072706F /* GCDBlackBox.swift in Sources */,
+				0FD637C72890ABFC0072706F /* ModulesVC.swift in Sources */,
+				0FD637CB2890AC690072706F /* ShowAlert.swift in Sources */,
+				0FD637C52890ABD20072706F /* ModuleCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +320,9 @@
 		};
 		0FD637C22890A8F30072706F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AB82523444D9BCC346D1BFB /* Pods-ModulesVC.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -282,6 +343,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -289,7 +351,9 @@
 		};
 		0FD637C32890A8F30072706F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F4E5CEDCCC8C884A9764F6 /* Pods-ModulesVC.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

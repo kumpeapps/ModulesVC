@@ -1,0 +1,42 @@
+PODS:
+  - BadgeSwift (8.0.0)
+  - CollectionViewCenteredFlowLayout (1.0.1)
+  - DeviceKit (4.6.1)
+  - FetchedResultsControllerCollectionViewUpdater (0.1.0)
+  - Haptico (1.1.1)
+  - Kingfisher (7.3.0)
+  - SwiftMessages (9.0.6):
+    - SwiftMessages/App (= 9.0.6)
+  - SwiftMessages/App (9.0.6)
+
+DEPENDENCIES:
+  - BadgeSwift
+  - CollectionViewCenteredFlowLayout
+  - DeviceKit
+  - FetchedResultsControllerCollectionViewUpdater
+  - Haptico
+  - Kingfisher
+  - SwiftMessages
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - BadgeSwift
+    - CollectionViewCenteredFlowLayout
+    - DeviceKit
+    - FetchedResultsControllerCollectionViewUpdater
+    - Haptico
+    - Kingfisher
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  BadgeSwift: a81547ffde1f462bb5fc02e3fa3fdcbc1b888354
+  CollectionViewCenteredFlowLayout: 339b935be4d8578c59e448c8906117a07c657d85
+  DeviceKit: 316f28290430467278b8a0d1c895968efa9e16e2
+  FetchedResultsControllerCollectionViewUpdater: 10e88db1403d8d6e17a5d323efe1d1fd31dd0e1c
+  Haptico: 3ab938425737e2b90939d41e1b23538cdbe1cf44
+  Kingfisher: cdb1189a9223b1bc028816bd47c8b8101a58831c
+  SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
+
+PODFILE CHECKSUM: e7535a772975f14ae0c3c77790285bca72c3d45f
+
+COCOAPODS: 1.11.3

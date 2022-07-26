@@ -1,0 +1,14 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '15'
+use_frameworks!
+
+target 'ModulesVC' do
+project 'ModulesVC.xcodeproj'
+        pod 'SwiftMessages'
+        pod 'CollectionViewCenteredFlowLayout'
+	pod 'Haptico'
+	pod 'DeviceKit'
+	pod 'FetchedResultsControllerCollectionViewUpdater'
+	pod 'BadgeSwift'
+	pod 'Kingfisher'
+end
