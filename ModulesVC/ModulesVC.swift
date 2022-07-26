@@ -16,7 +16,7 @@ import SwiftMessages
 open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     ///List of Modules
-    open var modules:[KModule] = []
+    open var modules: [KModule] = []
     ///Sets Icon Width. Default is 100
     open var iconWidth:Int = 100
     ///Sets cell background color. Default is clear
@@ -145,8 +145,8 @@ open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
     ///Returns KModule using given parameters and settiings. This is useful if you need custom badge or title settings that you need applied to multiple modules. Create variables for your settings and pass them to this one function instead of having to set the settings on each module individually.
-    public func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil, badgeSettings: KModule_Settings_Badge = KModule_Settings_Badge(), titleSettings: KModule_Settings_Title = KModule_Settings_Title(), watermarkSettings: KModule_Settings_Watermark = KModule_Settings_Watermark()) -> KModule {
-        var settingsBundle: KModule_Settings = KModule_Settings()
+    public func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil, badgeSettings: KModuleSettingsBadge = KModuleSettingsBadge(), titleSettings: KModuleSettingsTitle = KModuleSettingsTitle(), watermarkSettings: KModuleSettingsWatermark = KModuleSettingsWatermark()) -> KModule {
+        var settingsBundle: KModuleSettings = KModuleSettings()
         settingsBundle.badge = badgeSettings
         settingsBundle.title = titleSettings
         var module: KModule = KModule(title: title, action: action, icon: icon, remoteIconURL: remoteIconURL, badgeText: badgeText, watermark: watermark, isEnabled: isEnabled)
@@ -154,62 +154,4 @@ open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         return module
     }
 
-}
-
-///Defines a module
-public struct KModule {
-    public var title: String
-    public var action: String
-    public var icon: UIImage
-    public var remoteIconUrl: String?
-    public var badgeText: String?
-    public var isEnabled: Bool
-    public var watermark: UIImage?
-    public var settings: KModule_Settings
-    public init(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, watermark: UIImage? = nil, isEnabled: Bool = true) {
-        self.title = title
-        self.action = action
-        self.icon = icon
-        self.remoteIconUrl = remoteIconURL
-        self.badgeText = badgeText
-        self.isEnabled = isEnabled
-        self.watermark = watermark
-        self.settings = KModule_Settings()
-    }
-}
-
-///Defines a custom Badge settings bundle
-public struct KModule_Settings_Badge {
-    public var badgeColor: UIColor = .red
-    public var borderColor: UIColor = .red
-    public var cornerRadius: CGFloat = -1
-    public var borderWidth: CGFloat = 0
-    public var textColor: UIColor = .white
-    public var font: UIFont = UIFont(name: "Helvetica", size: 14)!
-    public var isHidden: Bool = false
-    public init () {}
-}
-
-///Defines a custom Title settings bundle
-public struct KModule_Settings_Title {
-    public var textColor: UIColor = .white
-    public var isHidden: Bool = false
-    public var textAlignment: NSTextAlignment = .center
-    public var font: UIFont = UIFont(name: "Marker Felt", size: 17)!
-    public init () {}
-}
-
-///Defines a custom Watermark settings bundle
-public struct KModule_Settings_Watermark {
-    public var alpha: CGFloat = 0.85
-    public var isHidden: Bool = true
-    public init() {}
-}
-
-///Defines a custom settings bundle
-public struct KModule_Settings {
-    public var badge: KModule_Settings_Badge = KModule_Settings_Badge()
-    public var title: KModule_Settings_Title = KModule_Settings_Title()
-    public var watermark: KModule_Settings_Watermark = KModule_Settings_Watermark()
-    public init() {}
 }

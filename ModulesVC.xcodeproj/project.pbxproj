@@ -11,6 +11,8 @@
 		0FD637C72890ABFC0072706F /* ModulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD637C62890ABFC0072706F /* ModulesVC.swift */; };
 		0FD637CB2890AC690072706F /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD637CA2890AC690072706F /* ShowAlert.swift */; };
 		0FD637CD2890AD5F0072706F /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD637CC2890AD5F0072706F /* GCDBlackBox.swift */; };
+		0FD637D02890B0130072706F /* KModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD637CF2890B0130072706F /* KModule.swift */; };
+		0FD637D22890B03F0072706F /* KModuleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD637D12890B03F0072706F /* KModuleSettings.swift */; };
 		6E55C9703185BBC369E92111 /* Pods_ModulesVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698ED7CBC24AE790C97FB59D /* Pods_ModulesVC.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +22,8 @@
 		0FD637C62890ABFC0072706F /* ModulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesVC.swift; sourceTree = "<group>"; };
 		0FD637CA2890AC690072706F /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		0FD637CC2890AD5F0072706F /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
+		0FD637CF2890B0130072706F /* KModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KModule.swift; sourceTree = "<group>"; };
+		0FD637D12890B03F0072706F /* KModuleSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KModuleSettings.swift; sourceTree = "<group>"; };
 		698ED7CBC24AE790C97FB59D /* Pods_ModulesVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ModulesVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AB82523444D9BCC346D1BFB /* Pods-ModulesVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModulesVC.debug.xcconfig"; path = "Target Support Files/Pods-ModulesVC/Pods-ModulesVC.debug.xcconfig"; sourceTree = "<group>"; };
 		E5F4E5CEDCCC8C884A9764F6 /* Pods-ModulesVC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModulesVC.release.xcconfig"; path = "Target Support Files/Pods-ModulesVC/Pods-ModulesVC.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,12 +62,22 @@
 		0FD637BA2890A8F30072706F /* ModulesVC */ = {
 			isa = PBXGroup;
 			children = (
+				0FD637CE2890B0000072706F /* Structs */,
 				0FD637C42890ABD10072706F /* ModuleCollectionViewCell.swift */,
 				0FD637C62890ABFC0072706F /* ModulesVC.swift */,
 				0FD637CA2890AC690072706F /* ShowAlert.swift */,
 				0FD637CC2890AD5F0072706F /* GCDBlackBox.swift */,
 			);
 			path = ModulesVC;
+			sourceTree = "<group>";
+		};
+		0FD637CE2890B0000072706F /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				0FD637CF2890B0130072706F /* KModule.swift */,
+				0FD637D12890B03F0072706F /* KModuleSettings.swift */,
+			);
+			path = Structs;
 			sourceTree = "<group>";
 		};
 		554B8D952AD8E79682E064F6 /* Pods */ = {
@@ -188,7 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD637D02890B0130072706F /* KModule.swift in Sources */,
 				0FD637CD2890AD5F0072706F /* GCDBlackBox.swift in Sources */,
+				0FD637D22890B03F0072706F /* KModuleSettings.swift in Sources */,
 				0FD637C72890ABFC0072706F /* ModulesVC.swift in Sources */,
 				0FD637CB2890AC690072706F /* ShowAlert.swift in Sources */,
 				0FD637C52890ABD20072706F /* ModuleCollectionViewCell.swift in Sources */,
