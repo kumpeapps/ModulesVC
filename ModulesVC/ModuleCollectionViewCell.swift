@@ -13,33 +13,33 @@ open class ModuleCollectionViewCell: UICollectionViewCell {
 
     ///imageView is used to display the module icon
     let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.contentMode = .scaleAspectFit
-        return iv
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     ///watermark is placed over the top of the icon when the moule isEnabled = false. watermark alpha is set to 0.85 by default
     let watermark: UIImageView = {
-        let iv = UIImageView()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.contentMode = .scaleAspectFit
-        return iv
+        let watermark = UIImageView()
+        watermark.translatesAutoresizingMaskIntoConstraints = false
+        watermark.contentMode = .scaleAspectFit
+        return watermark
     }()
     ///title to be displayed below the module icon
     let title: UILabel = {
-        let iv = UILabel()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.textAlignment = .center
-        iv.adjustsFontSizeToFitWidth = true
-        return iv
+        let title = UILabel()
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.textAlignment = .center
+        title.adjustsFontSizeToFitWidth = true
+        return title
     }()
     ///badge to be displayed in upper right corner of module icon
     let badge: BadgeSwift = {
-        let iv = BadgeSwift()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.badgeColor = .red
-        iv.textColor = .white
-        return iv
+        let badge = BadgeSwift()
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        badge.badgeColor = .red
+        badge.textColor = .white
+        return badge
     }()
 
     override public init(frame: CGRect) {
