@@ -1,9 +1,9 @@
-name: pod_lib_lint
+name: Cocoa Pods
 
 on:
   push:
 jobs:
-  build:
+  pod_lib_lint:
 
     runs-on: macOS-latest
 
