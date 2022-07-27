@@ -1,7 +1,7 @@
 name: pod_lib_lint
 
 on:
-  commit:
+  push:
 jobs:
   build:
 
