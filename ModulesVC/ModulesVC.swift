@@ -25,6 +25,10 @@ open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     open var collectionViewBackgroundColor: UIColor = .clear
     ///Sets icon cache
     public let iconCache = ImageCache(name: "iconCache")
+    ///Sets the title of the alert displayed when user clicks on disabled module
+    open var disabledAlertTitle: String = "Access Denied"
+    ///Sets the message of the alert displayed when user clicks on disabled module
+    open var disabledAlertMessage: String = "You do not have access to this module!"
 
     ///collectionView used for module icons
     open var collectionView: UICollectionView = {
@@ -136,7 +140,7 @@ open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     ///didSelectModule is called by default when a collectionView cell is tapped. By default this method will display Access Denied message if module isEnabled=false or perform segue withIdentifier module.action if module.action contains "segue"
     open func didSelectModule(_ module: KModule) {
         guard module.isEnabled else {
-            ShowAlert.centerView(theme: .error, title: "Access Denied", message: "You do not have access to \(module.title).", seconds: .infinity, invokeHaptics: true)
+            ShowAlert.centerView(theme: .error, title: self.disabledAlertTitle, message: self.disabledAlertMessage, seconds: .infinity, invokeHaptics: true)
             return
         }
         if module.action.contains("segue") {
