@@ -1,4 +1,4 @@
-name: deploy_to_cocoapods
+name: Cocoa Pods
 
 on:
   push:
@@ -6,9 +6,10 @@ on:
       - '*'
 
 jobs:
-  build:
+  deploy:
 
     runs-on: macOS-latest
+    environment: Cocoa Pods
 
     steps:
     - uses: actions/checkout@v1
