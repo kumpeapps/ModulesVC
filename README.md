@@ -12,19 +12,19 @@ Using CocoaPods
 `pod 'ModulesVC'`
 
 ## Setup
-- Create a new view and view controller
-- import ModulesVC
-- Conform your view controller to ModulesVC
-- Configure your modules (see below)
-- Call setupCollectionView()
+-   Create a new view and view controller
+-   import ModulesVC
+-   Conform your view controller to ModulesVC
+-   Configure your modules (see below)
+-   Call setupCollectionView()
 
 ## Third Party Frameworks Used
-- [Kingfisher](https://github.com/onevcat/Kingfisher)
-- [BadgeSwift](https://github.com/evgenyneu/swift-badge)
-- [Haptico](https://github.com/iSapozhnik/Haptico)
-- [SwiftMessages](https://github.com/SwiftKickMobile/SwiftMessages)
-- [CollectionViewCenteredFlowLayout](https://github.com/Coeur/CollectionViewCenteredFlowLayout)
-- [DeviceKit](https://github.com/devicekit/DeviceKit)
+-   [Kingfisher](https://github.com/onevcat/Kingfisher)
+-   [BadgeSwift](https://github.com/evgenyneu/swift-badge)
+-   [Haptico](https://github.com/iSapozhnik/Haptico)
+-   [SwiftMessages](https://github.com/SwiftKickMobile/SwiftMessages)
+-   [CollectionViewCenteredFlowLayout](https://github.com/Coeur/CollectionViewCenteredFlowLayout)
+-   [DeviceKit](https://github.com/devicekit/DeviceKit)
 
 ## Configuring Modules
 
@@ -34,12 +34,12 @@ let module1 = KModule.init(title: "Users", action: "segueUsers", icon: UIImage(n
 let module2 = KModule.init(title: "Cable Count Calculator", action: "test", icon: UIImage(named: "icons8-swirl")!, remoteIconURL: "https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-test-nursing-flaticons-flat-flat-icons.png", badgeText: "New", isEnabled: false, watermark: UIImage(named: "icons8-disabled"))
 modules = [module2,module2]
 ```
-- Title is displayed as a UILabel at the bottom of the module icon.
-- Action is used to call didSelectModule function when module icon is tapped. By default if the module's isEnabled is set to false then an access denied alert will be displayed, otherwise if the word segue is in the action then it will perform segue on the action text. Ex. action "segueUsers" will perform segue on "segueUsers".
-- Icon is the icon to display for the module
-- badgeText is optional and if not nil will display a badge in the upper right of the module icon with the badgeText
-- isEnabled sets the module to enabled for the user
-- watermark is optional and used to set an image as a watermark over the top of the module icon if module isEnabled=false
+-   Title is displayed as a UILabel at the bottom of the module icon.
+-   Action is used to call didSelectModule function when module icon is tapped. By default if the module's isEnabled is set to false then an access denied alert will be displayed, otherwise if the word segue is in the action then it will perform segue on the action text. Ex. action "segueUsers" will perform segue on "segueUsers".
+-   Icon is the icon to display for the module
+-   badgeText is optional and if not nil will display a badge in the upper right of the module icon with the badgeText
+-   isEnabled sets the module to enabled for the user
+-   watermark is optional and used to set an image as a watermark over the top of the module icon if module isEnabled=false
 
 ### Custom Module
 Module text and badge can be customized by passing "settings bundles". The easiest way to do this is by using the buildModule() function.
