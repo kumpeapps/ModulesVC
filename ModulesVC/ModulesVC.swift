@@ -163,7 +163,7 @@ open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
     ///Returns KModule using given parameters and settiings. This is useful if you need custom badge or title settings that you need applied to multiple modules. Create variables for your settings and pass them to this one function instead of having to set the settings on each module individually.
-    public func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil, settings: KModuleSettings) -> KModule{
+    public func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil, settings: KModuleSettings) -> KModule {
         let module = buildModule(title: title, action: action, icon: icon, remoteIconURL: remoteIconURL, badgeText: badgeText, isEnabled: isEnabled, watermark: watermark, badgeSettings: settings.badge, titleSettings: settings.title, watermarkSettings: settings.watermark, alertSettings: settings.alert)
         return module
     }
