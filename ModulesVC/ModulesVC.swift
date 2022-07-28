@@ -25,10 +25,6 @@ open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     open var collectionViewBackgroundColor: UIColor = .clear
     ///Sets icon cache
     public let iconCache = ImageCache(name: "iconCache")
-    ///Sets the title of the alert displayed when user clicks on disabled module
-    open var disabledAlertTitle: String = "Access Denied"
-    ///Sets the message of the alert displayed when user clicks on disabled module
-    open var disabledAlertMessage: String = "You do not have access to this module!"
 
     ///collectionView used for module icons
     open var collectionView: UICollectionView = {
@@ -91,6 +87,7 @@ open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         return CGSize(width: screenWidth, height: screenWidth)
     }
 
+    ///Called when module icon is tapped
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let module = modules[(indexPath as NSIndexPath).row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ModuleCollectionViewCell
@@ -137,25 +134,65 @@ open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         didSelectModule(module)
     }
 
-    ///didSelectModule is called by default when a collectionView cell is tapped. By default this method will display Access Denied message if module isEnabled=false or perform segue withIdentifier module.action if module.action contains "segue"
+    ///didSelectModule is called by default when a collectionView cell is tapped. By default this method will display Access Denied message if module isEnabled=false or perform default action (segue or launch)
     open func didSelectModule(_ module: KModule) {
         guard module.isEnabled else {
-            ShowAlert.centerView(theme: .error, title: self.disabledAlertTitle, message: self.disabledAlertMessage, seconds: .infinity, invokeHaptics: true)
+            let settings = module.settings.alert
+            ShowAlert.centerView(theme: settings.theme, title: settings.title, message: settings.message, seconds: settings.seconds, invokeHaptics: true)
             return
         }
-        if module.action.contains("segue") {
-            performSegue(withIdentifier: module.action, sender: self)
+        let action = module.action
+        if action.lowercased().hasPrefix("[segue]") {
+            let segue = action.replacingOccurrences(of: "[segue]", with: "")
+            performSegue(withIdentifier: segue, sender: self)
+        } else if action.lowercased().hasPrefix("[url]") {
+            let url = action.replacingOccurrences(of: "[url]", with: "")
+            launchURL(url)
         }
     }
 
     ///Returns KModule using given parameters and settiings. This is useful if you need custom badge or title settings that you need applied to multiple modules. Create variables for your settings and pass them to this one function instead of having to set the settings on each module individually.
-    public func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil, badgeSettings: KModuleSettingsBadge = KModuleSettingsBadge(), titleSettings: KModuleSettingsTitle = KModuleSettingsTitle(), watermarkSettings: KModuleSettingsWatermark = KModuleSettingsWatermark()) -> KModule {
+    public func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil, badgeSettings: KModuleSettingsBadge = KModuleSettingsBadge(), titleSettings: KModuleSettingsTitle = KModuleSettingsTitle(), watermarkSettings: KModuleSettingsWatermark = KModuleSettingsWatermark(), alertSettings: KModuleSettingsDisabledAlert = KModuleSettingsDisabledAlert()) -> KModule {
         var settingsBundle: KModuleSettings = KModuleSettings()
         settingsBundle.badge = badgeSettings
         settingsBundle.title = titleSettings
+        settingsBundle.alert = alertSettings
         var module: KModule = KModule(title: title, action: action, icon: icon, remoteIconURL: remoteIconURL, badgeText: badgeText, watermark: watermark, isEnabled: isEnabled)
         module.settings = settingsBundle
         return module
+    }
+
+    ///Returns KModule using given parameters and settiings. This is useful if you need custom badge or title settings that you need applied to multiple modules. Create variables for your settings and pass them to this one function instead of having to set the settings on each module individually.
+    public func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil, settings: KModuleSettings) -> KModule{
+        let module = buildModule(title: title, action: action, icon: icon, remoteIconURL: remoteIconURL, badgeText: badgeText, isEnabled: isEnabled, watermark: watermark, badgeSettings: settings.badge, titleSettings: settings.title, watermarkSettings: settings.watermark, alertSettings: settings.alert)
+        return module
+    }
+
+    ///Returns KModule using given parameters with default settings
+    public func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil) -> KModule {
+        let module = buildModule(title: title, action: action, icon: icon, remoteIconURL: remoteIconURL, badgeText: badgeText, isEnabled: isEnabled, watermark: watermark, settings: KModuleSettings())
+        return module
+    }
+
+    // MARK: Launch URL
+    fileprivate func launchURL(_ urlString: String?) {
+        guard let urlString = urlString else {
+            return
+        }
+        var newUrlString = urlString
+        if !urlString.contains("://") {
+            newUrlString = "http://\(urlString)"
+        }
+        guard UIApplication.shared.canOpenURL(URL(string: newUrlString)!) else {
+            return
+        }
+        if let url = URL(string: newUrlString) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
 
 }

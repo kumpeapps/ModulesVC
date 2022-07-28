@@ -35,11 +35,21 @@ let module2 = KModule.init(title: "Cable Count Calculator", action: "test", icon
 modules = [module2,module2]
 ```
 -   Title is displayed as a UILabel at the bottom of the module icon.
--   Action is used to call didSelectModule function when module icon is tapped. By default if the module's isEnabled is set to false then an access denied alert will be displayed, otherwise if the word segue is in the action then it will perform segue on the action text. Ex. action "segueUsers" will perform segue on "segueUsers".
+-   Action is used to call didSelectModule function when module icon is tapped. By default if the module's isEnabled is set to false then an access denied alert will be displayed, otherwise it will perform default actions according to the action field (See Default Actions below).
 -   Icon is the icon to display for the module
 -   badgeText is optional and if not nil will display a badge in the upper right of the module icon with the badgeText
 -   isEnabled sets the module to enabled for the user
 -   watermark is optional and used to set an image as a watermark over the top of the module icon if module isEnabled=false
+
+#### Default Actions
+-   [segue]: will perform segue. example: To peform segue with identifier "users"
+```swift 
+module.action = "[segue]users"
+``` 
+-   [url]: will launch url in default browser. example: To launch https://google.com in default browser:
+```swift 
+module.action = "[url]https://google.com"
+```
 
 ### Custom Module
 Module text and badge can be customized by passing "settings bundles". The easiest way to do this is by using the buildModule() function.
@@ -108,11 +118,17 @@ You can override the function didSelectModule() to customize actions when user t
 ```swift
 override func didSelectModule(_ module: KModule) {
         guard module.isEnabled else {
-            ShowAlert.centerView(theme: .error, title: self.disabledAlertTitle, message: self.disabledAlertMessage, seconds: .infinity, invokeHaptics: true)
+            let settings = module.settings.alert
+            ShowAlert.centerView(theme: settings.theme, title: settings.title, message: settings.message, seconds: settings.seconds, invokeHaptics: true)
             return
         }
-        if module.action.contains("segue") {
-            performSegue(withIdentifier: module.action, sender: self)
+        let action = module.action
+        if action.lowercased().hasPrefix("[segue]") {
+            let segue = action.replacingOccurrences(of: "[segue]", with: "")
+            performSegue(withIdentifier: segue, sender: self)
+        } else if action.lowercased().hasPrefix("[url]") {
+            let url = action.replacingOccurrences(of: "[url]", with: "")
+            launchURL(url)
         }
     }
  ```

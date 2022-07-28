@@ -11,7 +11,7 @@ s.summary = "Module Selection View Controller using CollectionView"
 s.version          = ENV['LIB_VERSION'] || '1.0' #fallback to major version
 
 # 3
-s.license = { :type => "MIT", :file => "LICENSE"}
+s.license = { :type => "GPL-3.0", :file => "LICENSE"}
 
 # 4 - Replace with your name and e-mail address
 s.author = { "Justin Kumpe" => "helpdesk@kumpeapps.com" }

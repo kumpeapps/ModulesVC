@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftMessages
 
 ///Defines a custom Badge settings bundle
 public struct KModuleSettingsBadge {
@@ -41,5 +42,15 @@ public struct KModuleSettings {
     public var badge: KModuleSettingsBadge = KModuleSettingsBadge()
     public var title: KModuleSettingsTitle = KModuleSettingsTitle()
     public var watermark: KModuleSettingsWatermark = KModuleSettingsWatermark()
+    public var alert: KModuleSettingsDisabledAlert = KModuleSettingsDisabledAlert()
+    public init() {}
+}
+
+//Defines a custom DisabledAlert settings bundle
+public struct KModuleSettingsDisabledAlert {
+    public var theme: Theme = .error
+    public var title: String = "Access Denied"
+    public var message: String = "You do not have access to this module!"
+    public var seconds: Double  = .infinity
     public init() {}
 }
