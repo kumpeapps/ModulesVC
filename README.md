@@ -42,11 +42,11 @@ modules = [module2,module2]
 -   watermark is optional and used to set an image as a watermark over the top of the module icon if module isEnabled=false
 
 #### Default Actions
--   [segue]: will perform segue. example: To peform segue with identifier "users"
+-   \[segue\]: will perform segue. example: To peform segue with identifier "users"
 ```swift 
 module.action = "[segue]users"
 ``` 
--   [url]: will launch url in default browser. example: To launch https://google.com in default browser:
+-   \[url\]: will launch url in default browser. example: To launch https://google.com in default browser:
 ```swift 
 module.action = "[url]https://google.com"
 ```
