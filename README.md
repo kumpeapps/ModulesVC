@@ -75,10 +75,6 @@ Module text and badge can be customized by passing "settings bundles". The easie
     cellBackgroundColor = .clear
     ///Sets collectionView background color. Default is clear
     collectionViewBackgroundColor = .clear
-    ///Sets the title of the alert displayed when user clicks on disabled module
-    disabledAlertTitle = "Access Denied"
-    ///Sets the message of the alert displayed when user clicks on disabled module
-    disabledAlertMessage = "You do not have access to this module!"
 ```
 
 ### Remote Icon Cache
